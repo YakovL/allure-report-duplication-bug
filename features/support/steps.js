@@ -17,10 +17,10 @@ When('I add a pet', async function() {
 })
 
 Then('The pet is added', async function() {
-    this.epic("REST api")
+    // this.epic("REST api")
     this.parentSuite("REST api")
     this.suite("Petstore")
-    this.label(LabelName.PACKAGE, "cucumber.features.petstore")
+    // this.label(LabelName.PACKAGE, "cucumber.features.petstore")
 
     assert.equal(true, true)
 })
