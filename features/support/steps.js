@@ -1,11 +1,26 @@
 const assert = require('assert')
-const { When, Then } = require('@cucumber/cucumber')
-const { sum } = require('../../src/sum')
+const { Given, When, Then, setWorldConstructor } = require('@cucumber/cucumber')
+const { CucumberAllureWorld } = require('allure-cucumberjs')
+const { LabelName } = require('allure-js-commons')
+const Petstore = require('../../src/petstore')
 
-When('1 and 1 are passed to sum', function () {
-    this.sumResult = sum(1, 1)
-});
-  
-Then('result is 2', function () {
-    assert.equal(this.sumResult, 2)
-});
+setWorldConstructor(CucumberAllureWorld)
+
+var petstore = new Petstore()
+
+Given('I have a pet store', async function() { 
+    assert(petstore != null)
+})
+
+When('I add a pet', async function() {
+    assert.equal(true, true)
+})
+
+Then('The pet is added', async function() {
+    this.epic("REST api")
+    this.parentSuite("REST api")
+    this.suite("Petstore")
+    this.label(LabelName.PACKAGE, "cucumber.features.petstore")
+
+    assert.equal(true, true)
+})
