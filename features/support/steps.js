@@ -1,10 +1,10 @@
 const assert = require('assert')
 const { Given, When, Then, setWorldConstructor } = require('@cucumber/cucumber')
-const { CucumberAllureWorld } = require('allure-cucumberjs')
-const { LabelName } = require('allure-js-commons')
+// const { AllureCucumberWorld } = require('allure-cucumberjs')
+const { suite, parentSuite } = require('allure-js-commons')
 const Petstore = require('../../src/petstore')
 
-setWorldConstructor(CucumberAllureWorld)
+// setWorldConstructor(AllureCucumberWorld)
 
 var petstore = new Petstore()
 
@@ -18,8 +18,8 @@ When('I add a pet', async function() {
 
 Then('The pet is added', async function() {
     // this.epic("REST api")
-    this.parentSuite("REST api")
-    this.suite("Petstore")
+    await parentSuite("REST api")
+    await suite("Petstore")
     // this.label(LabelName.PACKAGE, "cucumber.features.petstore")
 
     assert.equal(true, true)

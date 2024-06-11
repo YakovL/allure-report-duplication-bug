@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "cucumber-js",
-    "report": "allure serve features/allure-results"
+    "report": "allure serve allure-results"
   },
   "keywords": [],
   "author": "",
@@ -16,6 +16,6 @@
   },
   "devDependencies": {
     "allure-commandline": "^2.29.0",
-    "allure-cucumberjs": "2.15.1"
+    "allure-cucumberjs": "3.0.0-beta.3"
   }
 }
