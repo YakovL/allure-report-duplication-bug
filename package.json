@@ -1,0 +1,20 @@
+{
+  "name": "debug-allure-cucumber-999",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "cucumber-js",
+    "report": "allure serve features/allure-results"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@cucumber/cucumber": "^10.8.0"
+  },
+  "devDependencies": {
+    "allure-commandline": "^2.29.0",
+    "allure-cucumberjs": "2.15.1"
+  }
+}
